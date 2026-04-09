@@ -624,18 +624,31 @@ h3.my-profession {
   height: 50px;
   padding: 0 50px;
 }
+/* RESPONSIVE LAYOUT */
 @media (max-width: 1199px) {
   .aside {
-    left: -270px;
+    left: -270px; /* Sembunyikan sidebar di layar sedang */
+    transition: all 0.3s ease;
+  }
+  .aside.open {
+    left: 0; /* Tampilkan saat class 'open' aktif */
   }
   .main-content {
-    padding-left: 0;
+    margin-left: 0; /* Konten memenuhi layar */
+  }
+  .aside .nav-toggler {
+    display: flex; /* Tampilkan tombol menu hamburger */
+    left: 30px;
+  }
+  .section .container {
+    padding-top: 80px; /* Beri ruang untuk tombol toggler */
   }
   .about .about-content .personal-info .info-item p span {
     display: block;
     margin-left: 0;
   }
 }
+
 @media (max-width: 991px) {
   .contact .contact-info-item,
   .portfolio .portfolio-item,
@@ -643,15 +656,20 @@ h3.my-profession {
     flex: 0 0 50%;
     max-width: 50%;
   }
-
   .home .home-info {
     flex: 0 0 100%;
     max-width: 100%;
+    text-align: center;
   }
   .home .home-img {
-    display: none;
+    display: none; /* Sembunyikan gambar besar di tablet jika mengganggu */
+  }
+  /* Agar teks perkenalan rapi di tengah */
+  .home .home-info .btn {
+    margin-top: 20px;
   }
 }
+
 @media (max-width: 767px) {
   .contact .contact-form .col-6,
   .contact .contact-info-item,
@@ -664,19 +682,12 @@ h3.my-profession {
     flex: 0 0 100%;
     max-width: 100%;
   }
-}
 
-/* RESPONSIVE */
-@media (max-width: 991px) {
-  .aside {
-    left: -270px; /* sembunyikan sidebar */
+  .section-title h2 {
+    font-size: 30px;
   }
 
-  .aside.open {
-    left: 0; /* tampil saat toggle */
-  }
-
-  .main-content {
-    margin-left: 0; /* reset biar full */
+  .aside .nav-toggler {
+    left: 20px;
   }
 }

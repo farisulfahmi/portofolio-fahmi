@@ -6,9 +6,15 @@ var typed = new Typed(".typing", {
   loop: true,
 });
 
-const navToggler = document.querySelector(".nav-toggler");
-const aside = document.querySelector(".aside");
+/* Menu Toggler (Aside) */
+const navTogglerBtn = document.querySelector(".nav-toggler"),
+  aside = document.querySelector(".aside");
 
-navToggler.addEventListener("click", () => {
-  aside.classList.toggle("open");
+navTogglerBtn.addEventListener("click", () => {
+  asideSectionTogglerBtn();
 });
+
+function asideSectionTogglerBtn() {
+  aside.classList.toggle("open");
+  navTogglerBtn.classList.toggle("open");
+}
