@@ -665,3 +665,18 @@ h3.my-profession {
     max-width: 100%;
   }
 }
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .aside {
+    left: -270px; /* sembunyikan sidebar */
+  }
+
+  .aside.open {
+    left: 0; /* tampil saat toggle */
+  }
+
+  .main-content {
+    margin-left: 0; /* reset biar full */
+  }
+}
